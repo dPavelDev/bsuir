@@ -2,8 +2,8 @@
 
 - [Лабораторная работа 6](https://github.com/gaykov/bsuir/tree/master/SP/Lab1): Приложения Windows с использованием Win 32 API :white_check_mark:
 - [Лабораторная работа 7](https://github.com/gaykov/bsuir/tree/master/SP/Lab2): Создание и использование элементов управления :white_check_mark:
-- [Лабораторная работа 8](https://github.com/gaykov/bsuir/tree/master/SP/Lab3): Графический ввод-вывод в оконном приложении
-- New: Лабораторная работа 9: Динамическое отображение данных на окне
+- [Лабораторная работа 8](https://github.com/gaykov/bsuir/tree/master/SP/Lab3): Графический ввод-вывод в оконном приложении :white_check_mark:
+- [Лабораторная работа 9](https://github.com/gaykov/bsuir/tree/master/SP/Lab4): Динамическое отображение данных на окне :white_check_mark:
 - New: Лабораторная работа 10: Обмен сообщениями между окнами, обработка сообщений ввода-вывода
 - Лабораторная работа 11: Использование потоков
 - New: Лабораторная работа 12: Синхронизация доступа к ресурсам
