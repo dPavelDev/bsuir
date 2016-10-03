@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GesturesLab</string>
+
+    <string name="info_fr1">Fragment 1</string>
+    <string name="info_fr2">Fragment 2</string>
+    <string name="info_fr3">Fragment 3</string>
+</resources>
