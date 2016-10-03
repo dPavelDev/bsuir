@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Second</string>
+    <string name="goToEngineer">More</string>
+    <string name="goToNormal">Go to normal</string>
+</resources>
