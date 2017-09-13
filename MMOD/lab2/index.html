@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<style>
+
+  .chart div {
+    font: 15px sans-serif;
+    background-color: steelblue;
+    text-align: right;
+    padding: 3px;
+    margin: 2px;
+    color: #006400;
+  }
+
+  .chart {
+    margin-bottom: 50px;
+  }
+
+</style>
+<div class="chart chart1">
+  Имитация сложного события, состоящего из двух независимых элементарных событий:
+</div>
+<div class="chart chart2">
+  Cложное событие состоит из элементарных зависимых событий А и В:
+</div>
+<div class="chart chart3">
+  Полная группа:
+</div>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script>
+  var socket = io();
+
+  socket.on('randomEvent1', function (data) {
+    drowChart(data, ".chart1")
+  });
+  socket.on('randomEvent2', function (data) {
+    drowChart(data, ".chart2")
+  });
+  socket.on('randomEvent3', function (data) {
+    drowChart(data, ".chart3")
+  });
+
+  function drowChart(data, box) {
+
+    var x = d3.scale.linear()
+      .domain([0, d3.max(data)])
+      .range([0, 420]);
+
+    d3.select(box)
+      .selectAll("div")
+      .data(data)
+      .enter().append("div")
+      .style("width", function(d) { return 2000*d + "px"; })
+      .text(function(d) { return d; });
+
+  }
+</script>
+</body>
+</html>
