@@ -16,9 +16,9 @@
         </div>
         <!-- Tabs -->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-          <a href="#fixed-tab-1" class="mdl-layout__tab is-active">ЛР 1</a>
+          <a href="#fixed-tab-1" class="mdl-layout__tab is-active">ЛР 1 (Шифр Цезаря)</a>
           <a href="#fixed-tab-2" class="mdl-layout__tab">Лр 2</a>
-          <a href="#fixed-tab-3" class="mdl-layout__tab">Лр 3</a>
+          <a href="#fixed-tab-3" class="mdl-layout__tab">Лр 3 (AES)</a>
         </div>
       </header>
       <main class="mdl-layout__content">
@@ -28,7 +28,6 @@
               <div class="mdl-textfield mdl-js-textfield">
                 <input class="mdl-textfield__input" type="text" id="text">
                 <label class="mdl-textfield__label" for="text">Текст</label>
-                <span class="mdl-textfield__error">Input is not a number!</span>
               </div>
 
               <div class="mdl-textfield mdl-js-textfield">
@@ -53,7 +52,24 @@
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
           <div class="page-content">
-            Тут будет третяя лаба
+            <form action="#" style="flex: 1;align-items: center;height: 100vh;justify-content: center; padding: 100px;">
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="aes-text">
+                <label class="mdl-textfield__label" for="aes-text">Текст</label>
+              </div>
+
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="aes-key">
+                <label class="mdl-textfield__label" for="aes-key">Ключ</label>
+              </div>
+
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="aes-encrypt">
+                Зашифровать
+              </button>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="aes-decrypt">
+                Расшифровать
+              </button>
+            </form>
           </div>
         </section>
       </main>
@@ -69,6 +85,10 @@
 
       socket.on('caesarResult', function (data) {
         $('#text').val(data)
+      });
+
+      socket.on('aesResult', function (data) {
+        $('#aes-text').val(data)
       });
 
       $('#encrypt').click(function() {
@@ -93,6 +113,30 @@
         }
 
         socket.emit('caesarDecrypt', JSON.stringify({ text, shift }));
+      });
+
+      $('#aes-encrypt').click(function() {
+        const text = $('#aes-text').val();
+        const key = $('#aes-key').val();
+
+        if (!text || !key) {
+          alert('Неа');
+          return;
+        }
+
+        socket.emit('aesEncrypt', JSON.stringify({ text, key }));
+      });
+
+      $('#aes-decrypt').click(function() {
+        const text = $('#aes-text').val();
+        const key = $('#aes-key').val();
+
+        if (!text || !key) {
+          alert('Неа');
+          return;
+        }
+
+        socket.emit('aesDecrypt', JSON.stringify({ text, key }));
       });
     </script>
   </body>
