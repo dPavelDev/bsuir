@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="100dp"
+    android:layout_width="match_parent">
+    <TextView
+        android:id="@+id/little_mes"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:singleLine="false"
+        android:ellipsize="none"
+        android:maxLines="2"/>
+    <ImageView
+        android:src="@drawable/ic_call_black_24dp"
+        android:layout_height="match_parent"
+        android:layout_width="50dp"/>
+</TableRow>

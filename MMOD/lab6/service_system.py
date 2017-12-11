@@ -154,10 +154,10 @@ class ServiceSystem(object):
 
     __receiver = Receiver()
     __phase_5 = Phase(5, partial(triangular, 2, 5, 3.5), 2, __receiver)
-    __phase_4 = Phase(4, partial(uniform, 3, 9), 4, __phase_5)
-    __phase_3 = Phase(4, partial(normalvariate, 7, 2), 3, __phase_4)
+    __phase_4 = Phase(10, partial(uniform, 3, 9), 4, __phase_5)
+    __phase_3 = Phase(10, partial(normalvariate, 7, 2), 3, __phase_4)
     __phase_2 = Phase(4, partial(triangular, 3, 8, 3), 3, __phase_3)
-    __phase_1 = Phase(3, partial(normalvariate, 5, 1), 2, __phase_2)
+    __phase_1 = Phase(10, partial(normalvariate, 5, 1), 2, __phase_2)
     __source = Sender(__phase_1)
 
     __phases = [

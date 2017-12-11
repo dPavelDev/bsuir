@@ -46,7 +46,7 @@ class ExponentialRandom(Random):
 
     def next(self):
         x = self._rand.random()
-        return 0 - log(1 - x) / self.__lambda
+        return -1 * log(x) / self.__lambda
 
 
 if __name__ == '__main__':

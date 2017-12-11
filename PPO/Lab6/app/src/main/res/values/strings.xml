@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Sixth</string>
+    <string name="StartService">Start Service</string>
+    <string name="StopService">Stop Service</string>
+    <string name="FetchValue">fetch</string>
+</resources>
