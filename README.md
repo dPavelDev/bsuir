@@ -8,3 +8,6 @@
 - [МЗИ (методы защиты информации)](https://github.com/gaykov/bsuir/tree/master/MZI)
 - [САиИО (???)](https://github.com/gaykov/bsuir/tree/master/SAIO)
 - [ТРПО (Теория разработки ПО)](https://github.com/gaykov/bsuir/tree/master/TRPO)
+
+# Экзамены
+- [ТиВП (Тестирование и верификация программ)](https://github.com/gaykov/bsuir/blob/master/exams/Testing.md) 
