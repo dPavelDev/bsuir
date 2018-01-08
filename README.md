@@ -11,3 +11,4 @@
 
 # Экзамены
 - [ТиВП (Тестирование и верификация программ)](https://github.com/gaykov/bsuir/blob/master/exams/Testing.md) 
+- [ТОФИ (???)](https://github.com/gaykov/bsuir/blob/master/exams/Tofi.md)
